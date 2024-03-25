@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="testbot">
+  <link name="base_footprint"/>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.014394 0.000123 0.022784"
+        rpy="0 0 0" />
+      <mass
+        value="0.38759" />
+      <inertia
+        ixx="0.00080164"
+        ixy="-1.095E-07"
+        ixz="-3.4377E-09"
+        iyy="0.00088461"
+        iyz="-1.6886E-08"
+        izz="0.0016606" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_link_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0 0.0"/>
+  </joint>
+
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.0010216 0.00096611 -0.006182"
+        rpy="0 0 0" />
+      <mass
+        value="0.025463" />
+      <inertia
+        ixx="1.291E-05"
+        ixy="-1.7604E-08"
+        ixz="-3.285E-10"
+        iyy="1.2908E-05"
+        iyz="3.1065E-10"
+        izz="2.226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.069121 0.09255 0.019945"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0.637"
+      velocity="65" />
+    <dynamics
+      damping="0.4"
+      friction="0.8" />
+  </joint>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="0.00050279 -0.0013131 0.006182"
+        rpy="0 0 0" />
+      <mass
+        value="0.025463" />
+      <inertia
+        ixx="1.2896E-05"
+        ixy="-1.1776E-08"
+        ixz="-1.6167E-10"
+        iyy="1.2922E-05"
+        iyz="4.2223E-10"
+        izz="2.226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.069121 -0.09255 0.019945"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="0.637"
+      velocity="65" />
+    <dynamics
+      damping="0.4"
+      friction="0.8" />
+  </joint>
+  <link
+    name="left_caster_wheel_link">
+    <inertial>
+      <origin
+        xyz="7.9353E-14 -9.5125E-14 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00090478" />
+      <inertia
+        ixx="1.3029E-08"
+        ixy="1.9387E-26"
+        ixz="-3.9887E-25"
+        iyy="1.3029E-08"
+        iyz="-4.1636E-27"
+        izz="1.3029E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/left_caster_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.74118 0.73333 0.72549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/left_caster_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_caster_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0.084184 0.06259 -0.013"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_caster_wheel_link" />
+    <axis
+      xyz="0 0 0" />
+    <dynamics
+      damping="0.3"
+      friction="0.3" />
+  </joint>
+  <link
+    name="right_caster_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/right_caster_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_controller_pkg/meshes/right_caster_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_caster_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0.084184 -0.063094 -0.013"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_caster_wheel_link" />
+    <axis
+      xyz="0 0 0" />
+    <dynamics
+      damping="0.3"
+      friction="0.3" />
+  </joint>
+
+  
+  <transmission name="left_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_actuator">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_actuator">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/testbot</robotNamespace>
+    <legacyModeNS>true</legacyModeNS>
+  </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+      <legacyMode>false</legacyMode>
+      <robotNamespace>/testbot</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>20</updateRate>
+      <leftJoint>left_wheel_joint</leftJoint>
+      <rightJoint>right_wheel_joint</rightJoint>
+      <wheelSeparation>0.173</wheelSeparation>
+      <wheelDiameter>0.065</wheelDiameter>
+      <torque>20</torque>
+      <commandTopic>/testbot/cmd_vel</commandTopic>
+      <odometryTopic>/testbot/odom</odometryTopic>
+      <odometryFrame>/testbot/odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+</robot>

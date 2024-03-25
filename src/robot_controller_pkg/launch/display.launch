@@ -1,0 +1,28 @@
+<launch>
+  <arg
+    name="model" />
+  <arg
+    name="gui"
+    default="true" />
+  <arg name="use_gui" default="true"/>
+  <param
+    name="robot_description"
+    textfile="$(find robot_controller_pkg)/urdf/cdc.urdf" />
+  <param
+    name="use_gui"
+    value="$(arg gui)" />
+  <node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" output="screen" unless="$(arg use_gui)"/>
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" output="screen" if="$(arg use_gui)"/>
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find robot_controller_pkg)/config/config.rviz" />
+</launch>
